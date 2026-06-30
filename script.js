@@ -3,76 +3,117 @@ const URL_GOOGLE = "https://script.google.com/macros/s/AKfycbwbewX0fgK_A8_FHDOv9
 let tableChoisie = localStorage.getItem("table");
 
 
-// Affichage de la table
-if (tableChoisie) {
-  document.getElementById("table").innerHTML =
-    "🎉 Vous êtes : " + tableChoisie;
+if(tableChoisie){
 
-  chargerScore();
-  chargerDefis();
+document.getElementById("table").innerHTML =
+"🎉 Vous êtes : " + tableChoisie;
+
+
+chargerScore();
+chargerDefis();
+
 }
 
 
-// Charger le score
-function chargerScore() {
 
-  fetch(`${URL_GOOGLE}?action=score&table=${tableChoisie}`)
-    .then(response => response.json())
-    .then(data => {
+function chargerScore(){
 
-      document.getElementById("score").innerHTML =
-        "Score : " + data.score + " points";
 
-    });
+fetch(`${URL_GOOGLE}?action=score&table=${tableChoisie}`)
+
+.then(r=>r.json())
+
+.then(data=>{
+
+document.getElementById("score").innerHTML =
+"🏆 Score : " + data.score + " points";
+
+
+});
+
 }
 
 
-// Charger les défis
-function chargerDefis() {
 
-  fetch(`${URL_GOOGLE}?action=defis`)
-    .then(response => response.json())
-    .then(defis => {
 
-      let zone = document.getElementById("defis");
 
-      zone.innerHTML = "";
+function chargerDefis(){
 
-      defis.forEach(defi => {
 
-        zone.innerHTML += `
-          <div class="defi">
+fetch(`${URL_GOOGLE}?action=defis`)
 
-            <h3>${defi.nom}</h3>
+.then(r=>r.json())
 
-            <p>${defi.points} points</p>
+.then(defis=>{
 
-            <button onclick="validerDefi(${defi.points})">
-              Défi réalisé !
-            </button>
 
-          </div>
-        `;
+let zone =
+document.getElementById("listeDefis");
 
-      });
 
-    });
+zone.innerHTML="";
+
+
+
+defis.forEach(d=>{
+
+
+zone.innerHTML += `
+
+<div class="defi">
+
+<h3>${d.nom}</h3>
+
+<p>${d.points} points</p>
+
+
+<button onclick="validerDefi('${d.nom}',${d.points})">
+
+Défi réalisé !
+
+</button>
+
+
+</div>
+
+`;
+
+});
+
+
+});
+
+
 }
 
 
-// Ajouter les points
-function validerDefi(points) {
 
-  fetch(
-    `${URL_GOOGLE}?action=ajouter&table=${tableChoisie}&points=${points}`
-  )
-  .then(response => response.json())
-  .then(data => {
 
-    document.getElementById("score").innerHTML =
-      "Score : " + data.score + " points";
 
-    alert("Bravo ! +" + points + " points 🎉");
+function validerDefi(nom,points){
 
-  });
+
+fetch(
+`${URL_GOOGLE}?action=ajouter&table=${tableChoisie}&points=${points}&defi=${nom}`
+)
+
+
+.then(r=>r.json())
+
+
+.then(data=>{
+
+
+document.getElementById("score").innerHTML =
+"🏆 Score : " + data.score + " points";
+
+
+alert(
+"Bravo 🎉 +" + points + " points"
+);
+
+
+});
+
+
 }
