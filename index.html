@@ -1,81 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défi Photo - Hélène & Jimmy</title>
 
-<title>Défi Photo - Hélène & Jimmy</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-
-<script defer src="script.js"></script>
-
+    <script defer src="script.js"></script>
 </head>
 
 <body>
 
-
 <header class="hero">
 
-<h1>💍 Hélène & Jimmy</h1>
+    <h1>💍 Hélène & Jimmy</h1>
 
-<p class="date">24 octobre 2026</p>
+    <p class="date">24 octobre 2026</p>
 
-<h2>Bienvenue au Grand Défi Photo !</h2>
+    <h2>Bienvenue au Grand Défi Photo !</h2>
 
-<p>
-Scannez, photographiez, amusez-vous et faites gagner votre table !
-</p>
+    <p>
+        Scannez, photographiez, amusez-vous et faites gagner votre table !
+    </p>
 
-
-<div id="table"></div>
-
-<div id="score"></div>
-
-
-<a href="#defis" class="btn">
-Commencer le défi
-</a>
-
+    <a href="#defis" class="btn">
+        Commencer le défi
+    </a>
 
 </header>
 
-
-
 <main>
 
-
-<section id="defis-section">
-
+<section id="defis">
 
 <h2>🏆 Les défis</h2>
 
+<div class="defis">
 
-<div id="defis" class="defis">
+<div class="carte facile">
+<h3>🟢 1 point</h3>
+<p>Selfie de toute votre table</p>
+</div>
 
+<div class="carte facile">
+<h3>🟢 1 point</h3>
+<p>Quelqu'un qui danse</p>
+</div>
+
+<div class="carte facile">
+<h3>🟢 1 point</h3>
+<p>Une décoration florale</p>
+</div>
+
+<div class="carte fun">
+<h3>🟠 2 points</h3>
+<p>Une grimace de groupe</p>
+</div>
+
+<div class="carte fun">
+<h3>🟠 2 points</h3>
+<p>Les mariés qui rient</p>
+</div>
+
+<div class="carte fun">
+<h3>🟠 2 points</h3>
+<p>Le plus beau pas de danse</p>
+</div>
+
+<div class="carte bonus">
+<h3>🔴 5 points</h3>
+<p>Trois générations réunies</p>
+</div>
+
+<div class="carte bonus">
+<h3>🔴 5 points</h3>
+<p>Une photo artistique</p>
+</div>
+
+<div class="carte bonus">
+<h3>🔴 5 points</h3>
+<p>Une photo qui fera rire les mariés</p>
+</div>
 
 </div>
 
-
 </section>
-
-
-
-
 
 <section id="upload">
 
-
 <h2>📸 Envoyer vos photos</h2>
-
 
 <form>
 
-
 <label>Votre table</label>
 
-
-<select id="choixTable">
+<select>
 
 <option>Table 1</option>
 <option>Table 2</option>
@@ -83,44 +103,29 @@ Commencer le défi
 <option>Table 4</option>
 <option>Table 5</option>
 <option>Table 6</option>
-<option>Table 7</option>
-<option>Table 8</option>
 
 </select>
 
-
 <br><br>
 
-
 <label>Choisissez vos photos</label>
-
 
 <input
 type="file"
 multiple
 accept="image/*">
 
-
 <br><br>
-
-
+    
 <button type="submit">
-
 📤 Envoyer
-
 </button>
-
 
 </form>
 
-
 </section>
 
-
-
 </main>
-
-
 
 <footer>
 
@@ -130,9 +135,5 @@ Avec ❤️ pour le mariage d'Hélène & Jimmy
 
 </footer>
 
-
-
 </body>
-
 </html>
-
