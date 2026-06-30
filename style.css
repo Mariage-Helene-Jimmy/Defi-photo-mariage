@@ -1,0 +1,118 @@
+:root {
+    --rose: #F7D6E0;
+    --lavande: #E9E4F7;
+    --sauge: #DCEEDC;
+    --blanc: #FFFDFB;
+    --texte: #444;
+    --ombre: rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--blanc);
+    color: var(--texte);
+    line-height: 1.6;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--rose), var(--lavande));
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #c78ca5;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b26d89;
+}
+
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.defis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.carte {
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px var(--ombre);
+}
+
+.facile {
+    background: #eef9ee;
+}
+
+.fun {
+    background: #fff5dd;
+}
+
+.bonus {
+    background: #ffe5e5;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px var(--ombre);
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background: #c78ca5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background: #b26d89;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
